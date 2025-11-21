@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Contact the CODM fan page admin.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Contact CODM Fan Page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CODM Fan Page | Contact</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <header>
-    <h1>Contact Us</h1>
-    <nav>
+    <h1>CONTACT US</h1>
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <nav id="nav">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html">Maps</a>
+        <a href="contact.html" class="active">Contact</a>
     </nav>
+
+    <button id="musicToggle" class="music-btn">🔊</button>
 </header>
 
-<section>
+
+<section class="contact-box">
     <form id="contactForm">
-        <label>Name:</label>
+        <label>Name</label>
         <input type="text" id="name">
 
-        <label>Email:</label>
+        <label>Email</label>
         <input type="email" id="email">
 
-        <label>Your CODM Message:</label>
+        <label>Message</label>
         <textarea id="message"></textarea>
 
-        <button type="submit">Send</button>
+        <button type="submit" class="btn">Submit</button>
         <p id="formMessage"></p>
     </form>
 </section>
 
+
 <footer>
-    <p>&copy; 2025 CODM Fan Page</p>
+    © 2025 • CODM Fan Project for School
 </footer>
 
+<audio id="bgMusic" loop>
+    <source src="https://files.catbox.moe/9bp7h1.mp3" type="audio/mpeg">
+</audio>
 <script src="script.js"></script>
+
 </body>
 </html>
