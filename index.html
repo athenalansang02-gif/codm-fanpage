@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="A beginner fan page about Call of Duty Mobile.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Call of Duty Mobile Fan Page Website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CODM Fan Page | Home</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CODM-like Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-    <h1>Call of Duty Mobile Fan Page</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <header>
+        <h1>CODM FANPAGE</h1>
 
-<section class="hero">
-    <h2 id="greeting"></h2>
-    <p>Welcome to a simple fan-made page dedicated to CODM players!</p>
-    <button id="btnToggle">Show Fun Fact</button>
-    <p id="fact" style="display:none;">🔥 Fun Fact: CODM was released globally in October 2019!</p>
-</section>
+        <button id="menuBtn" class="menu-btn">☰</button>
 
-<footer>
-    <p>&copy; 2025 CODM Fan Page</p>
-</footer>
+        <nav id="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">Maps</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-<script src="script.js"></script>
+        <button id="musicToggle" class="music-btn">🔊</button>
+    </header>
+
+    <section class="hero">
+        <h2 id="greeting"></h2>
+        <p>Welcome soldier. Ready for deployment?</p>
+
+        <button id="factBtn" class="btn">Click for CODM Fun Fact</button>
+        <p id="factText" class="hidden"></p>
+    </section>
+
+    <section class="cards">
+        <div class="card">⚔ Multiplayer Mode</div>
+        <div class="card">🎯 Ranked Battles</div>
+        <div class="card">🚁 Battle Royale</div>
+    </section>
+
+    <footer>
+        © 2025 • CODM Fan Project for School
+    </footer>
+
+    <audio id="bgMusic" loop>
+        <source src="https://files.catbox.moe/9bp7h1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
