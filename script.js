@@ -2,31 +2,58 @@
 const greeting = document.getElementById("greeting");
 const hour = new Date().getHours();
 
-if (hour < 12) greeting.innerText = "Good Morning, Soldier!";
-else if (hour < 18) greeting.innerText = "Good Afternoon, Warrior!";
-else greeting.innerText = "Good Evening, Operator!";
+greeting.innerText =
+    hour < 12 ? "Good Morning Soldier!" :
+    hour < 18 ? "Good Afternoon Operator!" :
+    "Good Evening Warrior!";
 
-// Fun Fact Toggle
-document.getElementById("btnToggle").addEventListener("click", function() {
-    const fact = document.getElementById("fact");
-    fact.style.display = fact.style.display === "none" ? "block" : "none";
-});
 
-// Simple Form Validation
-const form = document.getElementById("contactForm");
+// Fun fact button
+document.getElementById("factBtn").onclick = () => {
+    document.getElementById("factText").innerText =
+        "🔥 Did you know? CODM reached over 500 Million downloads!";
+    document.getElementById("factText").classList.remove("hidden");
+};
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+// Mobile menu
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
-    if (name === "" || email === "" || message === "") {
-        document.getElementById("formMessage").innerText = "Please fill in all fields.";
-        document.getElementById("formMessage").style.color = "red";
+menuBtn.onclick = () => {
+    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+};
+
+
+// Background music toggle
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.onclick = () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicToggle.textContent = "🔊";
     } else {
-        document.getElementById("formMessage").innerText = "Message Sent! 💥";
-        document.getElementById("formMessage").style.color = "lightgreen";
+        bgMusic.pause();
+        musicToggle.textContent = "🔇";
+    }
+};
+
+
+// Contact Form Validation
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let formMessage = document.getElementById("formMessage");
+
+    if (!name || !email || !message) {
+        formMessage.style.color = "red";
+        formMessage.innerText = "⚠ Please fill out all fields.";
+    } else {
+        formMessage.style.color = "lightgreen";
+        formMessage.innerText = "✔ Message sent! We'll contact you soon.";
     }
 });
